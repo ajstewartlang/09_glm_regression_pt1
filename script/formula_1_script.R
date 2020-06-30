@@ -46,3 +46,5 @@ summary(model1)
 # check our model assumptions
 
 check_model(model1)
+
+cooks.distance.lm(model1)

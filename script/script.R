@@ -3,6 +3,14 @@ library(MASS)
 library(ggrepel)
 library(Hmisc)
 
+as_tibble(rnorm(10000000, 0, 1)) %>%
+  ggplot(aes(x = value)) +
+  geom_histogram(bins = 1000) +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank()) +
+  labs(x = NULL, y = NULL)
+
 do_my_plot <- function(myr, mu){
   set.seed(1234)
   mysigma <- matrix(c(5, myr, myr, 50), nrow = 2, ncol = 2) 
