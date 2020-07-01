@@ -15,6 +15,16 @@ First off I'd like you to watch the following video which provides an introducti
 
 [Link to YouTube video here]
 
+&nbsp;&nbsp;
+
+<center>
+
+<iframe width="560" height="315" src="https://youtube.com/embed/TRUbHYPRZmg" frameborder="0" allowfullscreen></iframe>
+
+</center>
+
+&nbsp;&nbsp;
+
 ## Slides
 
 If you have a Google account, you can also view and download the slides in a range of formats by clicking on the image below. If you don't have a Google account, you can download the slides in .pdf format by [clicking here](../slides/glm_pt1.pdf).
@@ -28,6 +38,8 @@ If you have a Google account, you can also view and download the slides in a ran
 </center>
 
 &nbsp;&nbsp;
+
+[Link to live coding video]
 
 # The Packages We Need
 
@@ -56,7 +68,7 @@ First let's do some wrangling.  There is one column that combines both City and 
 Let's separate that information out into two new columns called "City" and "State" using the function `separate()`. Then have a look at what you now have. How has the output of `head(crime)` changed from above?
 
 ```{r}
-crime <- separate(crime, 'City, State', into=c("City", "State"))
+crime <- separate(crime, col = "City, State", into = c("City", "State"))
 head(crime)
 ```
 
