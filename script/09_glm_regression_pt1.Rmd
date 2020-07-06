@@ -41,7 +41,9 @@ If you have a Google account, you can also view and download the slides in a ran
 
 [Link to live coding video]
 
-# The Packages We Need
+# GLM Regression
+
+## The Packages We Need
 
 First we need to install the packages we need.  We're going to install the `tidyverse` packages plus a few others. The package `Hmisc` allows us to use the `rcorr()` function for calculating Pearson's r, and the `Performance` package so we can test our model assumptions.  Remember, if you haven't previously installed these packages on your laptop you first need to type `install.packages("packagename")` in the console before you can call the `library()` function for that package.
 
@@ -51,7 +53,7 @@ library(Hmisc)
 library(performance)
 ```
 
-# Import the Data
+## Import the Data
 
 Import the dataset called `crime_dataset.csv` - this dataset contains population data, housing price index data and crime data for cities in the US.
 
@@ -62,7 +64,7 @@ crime <- read_csv("https://raw.githubusercontent.com/ajstewartlang/09_glm_regres
 head(crime)
 ```
 
-# Tidy the Data
+## Tidy the Data
 
 First let's do some wrangling.  There is one column that combines both City and State information.
 Let's separate that information out into two new columns called "City" and "State" using the function `separate()`. Then have a look at what you now have. How has the output of `head(crime)` changed from above?
@@ -81,7 +83,7 @@ crime <- crime %>%
 head(crime)
 ```
 
-# Plot the Data
+## Plot the Data
 
 We might first think that as population size increases, crime rate also increases.  Let's first build a scatter plot.
 
@@ -96,7 +98,7 @@ crime %>%
        y = "Violent Crimes")
 ```
 
-# Pearson's r
+## Pearson's r
 
 This plot looks pretty interesting.  How about calculating Pearson's r?
 
@@ -158,7 +160,7 @@ This shows a clear positive linear relationship so let's work out Pearson's r.
 rcorr(crime_filtered$Population, crime_filtered$Violent_Crimes)
 ```
 
-# Model the Data
+## Model the Data
 
 Imagine we are a city planner, and we want to know by how much we think violent crimes might increase as a function of population size. In other words, we want to work out how the violent crime rate is predicted by population size.
 
@@ -168,6 +170,8 @@ We're going to build two linear models - one `model1` where we're using the mean
 model1 <- lm(Violent_Crimes ~ 1, data = crime_filtered)
 model2 <- lm(Violent_Crimes ~ Population, data = crime_filtered)
 ```
+
+## Checking Our Assumptions
 
 Let's use the `check_model()` function from the performance package to check the assumptions of our model.
 
@@ -183,6 +187,8 @@ anova(model1, model2)
 
 It is - the models differ and you'll see the residual sum of squares (or the error) is less in the second model (which has Population as the predictor). This means the deviation between our observed data and the regression line model `model2` is significantly less than the deviation between our observed data and the mean as a model of our data `model1`. So let's get the parameter estimates of `model2`.
 
+## Interpreting Our Model
+
 ```{r}
 summary(model2)
 ```
@@ -192,6 +198,8 @@ The intercept corresponds to where our regression line intercepts the y-axis, an
 For a city with a population of about a million, there will be about 7907 Violent Crimes. We calculate this by multiplying the estimate of our predictor (0.006963) by 1,000,000 and
 then adding the intercept (944.3).  This gives us 7907.3 crimes - which tallys with what you
 see in our regression line above. We may have a few outliers - how would you figure out what those were? Try excluding any outliers you find and re-building your model.
+
+## Your Challenge
 
 You now have three tasks:<br>
 1. Check whether the same relationship holds for population size and robberies in 2015.<br>
