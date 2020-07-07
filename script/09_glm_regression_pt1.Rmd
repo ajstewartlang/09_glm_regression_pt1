@@ -13,13 +13,11 @@ output:
 
 First off I'd like you to watch the following video which provides an introduction to regression, revises the basics of correlation, before examining how we build a regression model in R using the `lm()` function, test our model assumptions, and interpret the output. 
 
-[Link to YouTube video here]
-
 &nbsp;&nbsp;
 
 <center>
 
-<iframe width="560" height="315" src="https://youtube.com/embed/TRUbHYPRZmg" frameborder="0" allowfullscreen></iframe>
+[Link to YouTube video here]
 
 </center>
 
