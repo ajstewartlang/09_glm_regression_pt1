@@ -37,9 +37,7 @@ If you have a Google account, you can also view and download the slides in a ran
 
 &nbsp;&nbsp;
 
-[Link to live coding video]
-
-# GLM Regression
+# Simple Linear Regression
 
 ## The Packages We Need
 
