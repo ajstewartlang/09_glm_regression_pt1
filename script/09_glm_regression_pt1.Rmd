@@ -37,7 +37,14 @@ If you have a Google account, you can also view and download the slides in a ran
 
 &nbsp;&nbsp;
 
+## The Analysis in the Video
+
+If you'd like to run the analysis that I go through in the video above, you can download the F1 dataset containing the Points and Investment variables and map it onto the variable name `dataset1` like this:
+
+`dataset1 <- read_csv("https://raw.githubusercontent.com/ajstewartlang/09_glm_regression_pt1/master/data/dataset1.csv")`
+
 # Simple Linear Regression
+After having watched the video above, I'd like you to work through the following simple linear regression example. Remember to create a new `.Rproj` file to keep things organised.
 
 ## The Packages We Need
 
@@ -175,7 +182,7 @@ Let's use the `check_model()` function from the performance package to check the
 check_model(model2)
 ```
 
-Note, we'll come back to the influential outlier (case 29) later - but for now let's use the `anova()` function to see if our model with Population as the predictor is better than the one using just the mean.
+Our dataset is small and so some of our diagnostic plots don't look great. We'll come back to the influential outlier (case 29) later - but for now let's use the `anova()` function to see if our model with Population as the predictor is better than the one using just the mean.
 
 ```{r}
 anova(model1, model2)
@@ -191,9 +198,7 @@ summary(model2)
 
 The intercept corresponds to where our regression line intercepts the y-axis, and the Population parameter corresponds to the slope of our line. We see that for every increase in population by 1 there is an extra 0.006963 increase in violent crime. 
 
-For a city with a population of about a million, there will be about 7907 Violent Crimes. We calculate this by multiplying the estimate of our predictor (0.006963) by 1,000,000 and
-then adding the intercept (944.3).  This gives us 7907.3 crimes - which tallys with what you
-see in our regression line above. We may have a few outliers - how would you figure out what those were? Try excluding any outliers you find and re-building your model.
+For a city with a population of about a million, there will be about 7907 Violent Crimes. We calculate this by multiplying the estimate of our predictor (0.006963) by 1,000,000 and then adding the intercept (944.3).  This gives us 7907.3 crimes - which tallys with what you see in our regression line above. We may have a few outliers - how would you figure out what those were? Try excluding any outliers you find and re-building your model.
 
 ## Your Challenge
 
