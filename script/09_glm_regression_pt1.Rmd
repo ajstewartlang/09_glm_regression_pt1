@@ -25,7 +25,7 @@ First off I'd like you to watch the following video which provides an introducti
 
 ## Slides
 
-You can download the slides in .pdf format by clicking on the image below. 
+You can download the slides in .odp format by clicking [here](../slides/glm_pt1.odp) and in .pdf format by clicking on the image below. 
 
 &nbsp;&nbsp;
 
