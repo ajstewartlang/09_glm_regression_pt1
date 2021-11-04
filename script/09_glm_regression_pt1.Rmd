@@ -48,7 +48,7 @@ After having watched the video above, I'd like you to work through the following
 
 ## The Packages We Need
 
-First we need to install the packages we need.  We're going to install the `tidyverse` packages plus a few others. The package `Hmisc` allows us to use the `rcorr()` function for calculating Pearson's r, and the `Performance` package so we can test our model assumptions.  Remember, if you haven't previously installed these packages on your laptop you first need to type `install.packages("packagename")` in the console before you can call the `library()` function for that package.
+First we need to install the packages we need.  We're going to install the `tidyverse` packages plus a few others. The package `Hmisc` allows us to use the `rcorr()` function for calculating Pearson's r, and the `performance` package so we can test our model assumptions.  Remember, if you haven't previously installed these packages on your laptop you first need to type `install.packages("packagename")` in the console before you can call the `library()` function for that package. You *may* also need to install the package `see` to get the `performance` package working. If so, do that in the console by typing `install.packages("see")`.
 
 ```{r, message=FALSE}
 library(tidyverse)
