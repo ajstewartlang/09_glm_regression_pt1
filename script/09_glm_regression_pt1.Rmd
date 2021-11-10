@@ -17,7 +17,7 @@ First off I'd like you to watch the following video which provides an introducti
 
 <center>
 
-<iframe width="560" height="315" src="https://youtube.com/embed/bvnrq_nx_BI" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtube.com/embed/bvnrq_nx_BI" data-external="1" frameborder="0" allowfullscreen></iframe>
 
 </center>
 
